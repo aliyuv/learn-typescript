@@ -40,4 +40,25 @@ const str1 = echoWithLength("str");
 const obj = echoWithLength({length: 10, width: 10});
 const arr2 = echoWithLength([1, 2, 3]);
 
+class Queue<T> {
+    private data = [];
 
+    push(item: T) {
+        return this.data.push(item);
+    }
+
+    pop(): T {
+        return this.data.shift();
+    }
+}
+
+const queue = new Queue<number>();
+
+//泛型和 interface
+interface KeyPair<T, U> {
+    key: T;
+    value: U;
+}
+
+let kp1: KeyPair<number, string> = {key: 1, value: "str"};
+let kp2: KeyPair<string, number> = {key: "str", value: 110};
